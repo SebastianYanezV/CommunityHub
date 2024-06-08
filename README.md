@@ -1,2 +1,2 @@
 # CommunityHub
-Software para la administración de edificios y condominios
+Software para la administración de edificios y condominios.
