@@ -1,0 +1,8 @@
+
+.custom-teal {
+  color: var(--bs-teal);
+}
+
+.custom-button {
+  background-color: var( --bs-secondary);
+}
