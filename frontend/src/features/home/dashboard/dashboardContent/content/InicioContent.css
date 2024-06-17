@@ -1,0 +1,39 @@
+.inicio-content-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inicio-content-container-stats {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+
+.inicio-content-graphs {
+  color: var(--color-black);
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.inicio-content-graphs h2 {
+  margin-left: 10px;
+}
+
+.inicio-content-graphs span {
+  color: var(--bs-primary);
+}
+
+.inicio-content-graphs img {
+  width: 480px;
+}
+
+@media (max-width: 768px) {
+  .inicio-content-container {
+    display: block;
+    justify-content: center;
+  }
+}
