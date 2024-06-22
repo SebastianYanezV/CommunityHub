@@ -4,7 +4,6 @@
     flex-shrink: 0;
     border-radius: 10px;
     background: var(--color-yellow); /* Este color puede ser sobrescrito por la prop de estilo en el componente */
-    box-shadow: 0px 4px 19px 0px rgba(119, 147, 65, 0.30);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,6 +23,6 @@
 
 .button-container:hover {
     background: var(--color-yellow-dark); /* Cambia el color de fondo en hover */
-    box-shadow: 0px 6px 25px 0px rgba(119, 147, 65, 0.40);
+    box-shadow: 0px 0px 25px 0px rgba(32, 201, 151, 0.5);
 }
 

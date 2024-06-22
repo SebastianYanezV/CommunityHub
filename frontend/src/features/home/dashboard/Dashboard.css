@@ -119,8 +119,7 @@
   background: #f4f4f4;
   overflow-y: auto;
   height: 100%;
-  width: 89%;
-  margin-left: 120px;
+  margin-left: 250px;
 }
 
 @media (max-width: 768px) {

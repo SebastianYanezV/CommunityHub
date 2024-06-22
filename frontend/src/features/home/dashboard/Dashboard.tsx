@@ -46,9 +46,7 @@ const Dashboard: React.FC = () => {
           <div className={`dashboard-menu ${isMenuVisible ? 'show' : ''}`}>
             <DashboardMenu onMenuItemClick={handleMenuItemClick} />
           </div>
-          <div className='dashboard-content'>
-            <DashboardContent selectedItem={selectedItem} />
-          </div>
+          <DashboardContent selectedItem={selectedItem} />
         </div>
       </div>
     </IonPage>
