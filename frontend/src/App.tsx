@@ -34,6 +34,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import './theme/custom.css'
 import Dashboard from './features/home/dashboard/Dashboard';
+import DashboardResidente from './features/home/dashboardResidente/DashboardResidente';
 
 setupIonicReact();
 
@@ -49,6 +50,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/dashboard">
           <Dashboard></Dashboard>
+        </Route>
+        <Route exact path="/dashboardResidente">
+          <DashboardResidente></DashboardResidente>
         </Route>
       </IonRouterOutlet>
     </IonReactRouter>

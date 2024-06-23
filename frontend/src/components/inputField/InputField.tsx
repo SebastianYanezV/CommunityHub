@@ -10,15 +10,15 @@ interface ImputFieldProps {
 const ImputField: React.FC<ImputFieldProps> = ({
   inputText, 
   type,
-  value,
-  onChange
+  //value,
+  //onChange
 }) => {
 
   return (
     <input 
       type={type} 
-      value={value} 
-      onChange={onChange} 
+      //value={value} 
+      //onChange={onChange} 
       className="input-field" 
       placeholder={inputText}/>   
   );
