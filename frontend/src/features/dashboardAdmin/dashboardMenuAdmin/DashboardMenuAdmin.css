@@ -1,0 +1,13 @@
+.dashboardmenu-container {
+    width: 250px;
+    height: 1184px;
+    flex-shrink: 0;
+    background: var(--color-white);
+    display: flex;
+    justify-content: center;
+}
+
+.dashboardmenu-items-container {
+    padding-top: 10px;
+    width: 100%;
+}

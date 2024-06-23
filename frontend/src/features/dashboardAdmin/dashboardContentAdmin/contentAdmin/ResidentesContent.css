@@ -1,0 +1,12 @@
+.residentes-content-container {
+  max-width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-residentes-max-height {
+  max-height: 200px;
+  overflow-y: auto;
+}

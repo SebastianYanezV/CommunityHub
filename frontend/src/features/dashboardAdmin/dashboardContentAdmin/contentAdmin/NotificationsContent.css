@@ -1,0 +1,32 @@
+.notifications-content-container {
+  max-width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.notifications-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.notifications-table th,
+.notifications-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.notifications-table th {
+  color: #718EBF;
+  font-weight: bold;
+}
+
+.notifications-table tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+.notifications-table tbody tr:hover {
+  background-color: #e9ecef;
+}
