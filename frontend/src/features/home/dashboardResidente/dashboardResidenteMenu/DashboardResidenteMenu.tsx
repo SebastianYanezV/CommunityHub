@@ -43,13 +43,13 @@ const DashboardMenu: React.FC<DashboardMenuProps> = ({ onMenuItemClick }) => {
         />
         <DashboardResidenteMenuItem
           text='Notificaciones'
-          icon='/dasboard/item-menu-configuracion.svg'
+          icon='/dasboard/item-menu-notificaciones.svg'
           selectOn={selectedItem === 'Notificaciones'}
           onClick={() => handleMenuItemClick('Notificaciones')}
         />
         <DashboardResidenteMenuItem
           text='Recomendaciones'
-          icon='/dasboard/item-menu-configuracion.svg'
+          icon='/dasboard/item-menu-recomendacion.svg'
           selectOn={selectedItem === 'Recomendaciones'}
           onClick={() => handleMenuItemClick('Recomendaciones')}
         />
