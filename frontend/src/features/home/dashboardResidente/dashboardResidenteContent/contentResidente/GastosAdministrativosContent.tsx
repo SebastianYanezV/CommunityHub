@@ -3,10 +3,38 @@ import Card from '../../../../../components/card/Card';
 import Button from '../../../../../components/button/Button';
 import './GastosAdministrativosContent.css';
 import { IonGrid, IonRow, IonCol } from '@ionic/react';
+import {PlanillaGastoAdministrativo, DescripcionItem, listaPlanillasGastoAdministrativo} from './interfaces/interfaces'
 
 const InicioContent = () => {
+    const [planillasGastoAdministrativo, setPlanillasGastoAdministrativo] = useState<PlanillaGastoAdministrativo[]>([]);
+
+    const fetchPlanillasGastoAdministrativo = async () => {
+        try {
+            const response = await fetch('http://your-backend-api-url.com/planillasGastoAdministrativo', {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+                }
+            });
+
+            if (!response.ok) {
+                throw new Error('Network response was not ok ' + response.statusText);
+            }
+
+            const data = await response.json();
+            setPlanillasGastoAdministrativo(data);
+        } catch (error) {
+            setPlanillasGastoAdministrativo(listaPlanillasGastoAdministrativo);
+        }
+    };
+
+    useEffect(() => {
+        fetchPlanillasGastoAdministrativo();
+    }, []);
+
     return (
-        <div className='gastoAdmin-content-container'>     
+        <div className='gastoAdmin-content-container'>
             <IonGrid>
                 {/* Fila de encabezado */}
                 <IonRow className="table-header">
@@ -14,52 +42,27 @@ const InicioContent = () => {
                     <IonCol>ID Administrador</IonCol>
                     <IonCol>Fecha</IonCol>
                 </IonRow>
-
                 {/* Filas de datos */}
-                <IonRow>
-                    <IonCol>25</IonCol>
-                    <IonCol>1</IonCol>
-                    <IonCol>31-05-2024</IonCol>
-                </IonRow>
-
-                <IonRow className="table-header">
-                    <IonCol>Descripción</IonCol>
-                    <IonCol>Total</IonCol>
-                </IonRow>
-
-                {/* Filas de datos */}
-                <IonRow>
-                    <IonCol>Reparación de ascensores</IonCol>
-                    <IonCol>$100.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Pago de electricidad</IonCol>
-                    <IonCol>$50.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Limpieza de áreas comunes</IonCol>
-                    <IonCol>$30.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Seguridad privada</IonCol>
-                    <IonCol>$120.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Jardinería</IonCol>
-                    <IonCol>$20.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Agua potable</IonCol>
-                    <IonCol>$40.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol>Suministro de gas</IonCol>
-                    <IonCol>$60.000</IonCol>
-                </IonRow>
-                <IonRow>
-                    <IonCol></IonCol>
-                    <IonCol>$420.000</IonCol>
-                </IonRow>
+                {planillasGastoAdministrativo.map((planillaGastoAdministrativo) => (
+                    <React.Fragment key={planillaGastoAdministrativo.id_planilla}>
+                        <IonRow>
+                            <IonCol>{planillaGastoAdministrativo.id_planilla}</IonCol>
+                            <IonCol>{planillaGastoAdministrativo.id_administrador}</IonCol>
+                            <IonCol>{planillaGastoAdministrativo.fecha}</IonCol>
+                        </IonRow>
+                        {/* Sub encabezado para el cuerpo */}
+                        <IonRow className="table-header">
+                            <IonCol>Descripción</IonCol>
+                            <IonCol>Total</IonCol>
+                        </IonRow>
+                        {planillaGastoAdministrativo.cuerpo.map((item, index) => (
+                            <IonRow key={index}>
+                                <IonCol>{item.descripcion}</IonCol>
+                                <IonCol>{item.total}</IonCol>
+                            </IonRow>
+                        ))}
+                    </React.Fragment>
+                ))}
             </IonGrid>
         </div>
     );

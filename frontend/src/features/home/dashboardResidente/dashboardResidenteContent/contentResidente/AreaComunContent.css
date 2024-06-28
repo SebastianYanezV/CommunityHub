@@ -39,6 +39,7 @@
   align-items: flex-start;
   flex-wrap: nowrap; /* Asegura que los elementos no se envuelvan */
   justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {

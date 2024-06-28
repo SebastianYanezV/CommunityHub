@@ -30,7 +30,9 @@ const Dashboard: React.FC = () => {
                 <img src='/dasboard/item-notification.svg' alt="Notificaciones" />
               </div>
               <div className='dashboardnavbar-item-user'>
-                <img src='/dasboard/item-user.png' alt="Usuario" />
+                <a href='http://localhost:8100/home'>
+                  <img src='/dasboard/item-user.png' alt="Usuario" />
+                </a>
               </div>
               <button className='menu-toggle' onClick={toggleMenuVisibility} aria-controls="navbar" aria-expanded={isMenuVisible}>
                 <img 
