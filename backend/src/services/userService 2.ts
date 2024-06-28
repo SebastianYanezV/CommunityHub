@@ -13,7 +13,7 @@ export const getUserByEmail = async (correo: string): Promise<User | null> => {
         }
     } catch (err) {
         throw new Error(`Error al buscar usuario por email: ${err}`);
-        }
+    }
 };
 
 export const createUser = async (
