@@ -10,7 +10,7 @@ export const login = async (req: Request, res: Response) => {
 
     try {
         const user = await getUserByEmail(correo);
-        if (!user) {
+    if (!user) {
             return res.status(401).json({ message: 'Invalid credentials' });
         }
 
