@@ -33,7 +33,7 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 import './theme/custom.css'
-import Dashboard from './features/home/dashboard/Dashboard';
+import Dashboard from './dashboard/Dashboard';
 
 setupIonicReact();
 
