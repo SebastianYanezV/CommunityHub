@@ -1,0 +1,47 @@
+.gastoComun-content-container {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+  
+  .gastoComun-content-container-stats {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    align-items: flex-start;
+  }
+  
+  .gastoComun-content-graphs {
+    color: var(--color-black);
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+  .gastoComun-content-graphs h2 {
+    margin-left: 10px;
+  }
+  
+  .gastoComun-content-graphs span {
+    color: var(--bs-primary);
+  }
+  
+  .gastoComun-content-graphs img {
+    width: 480px;
+  }
+  
+  @media (max-width: 768px) {
+    .gastoComun-content-container {
+      display: block;
+      justify-content: center;
+    }
+  }
+
+  .gastoComun-content-container {
+    max-width: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
