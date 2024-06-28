@@ -17,7 +17,7 @@ const HistorialContent: React.FC<HistorialContentProps> = () => {
 
   const fetchHistorial = async () => {
     try {
-      const response = await fetch('', {
+      const response = await fetch('https://652rvtcw-3000.brs.devtunnels.ms/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

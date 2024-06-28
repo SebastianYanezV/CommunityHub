@@ -1,20 +1,14 @@
 import React, { useEffect, useState } from "react";
 import "./RecomendationsContent.css";
+import {listaRecomendaciones, RecomendacionItem} from "./data/data"
 
-interface RecomendacionItem {
-  id: string;
-  id_usuario: string;
-  fecha: string;
-  asunto: string;
-  descripcion: string;
-}
 
 const RecomendationsContent: React.FC = () => {
-  const [data, setData] = useState<RecomendacionItem[]>([]);
+  const [data, setData] = useState<RecomendacionItem[]>(listaRecomendaciones);
 
   const fetchRecomendations = async () => {
     try {
-      const response = await fetch("", {
+      const response = await fetch("https://652rvtcw-3000.brs.devtunnels.ms/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +23,7 @@ const RecomendationsContent: React.FC = () => {
       const fetchedData = await response.json();
       setData(fetchedData);
     } catch (error) {
-      console.error("Failed to fetch historial:", error);
+      
     }
   };
 
@@ -38,100 +32,30 @@ const RecomendationsContent: React.FC = () => {
   }, []);
 
   return (
-    <div className="recomendations-content-container">
-      <h2>Recomendaciones</h2>
-      <div className="lista-recomendaciones-container">
-        <div className="table-responsive content-recomendations-max-height">
-          <table className="table table-hover">
-            <thead>
-              <tr>
-                <th>Fecha</th>
-                <th>Asunto</th>
-                <th>Descripción</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr key="1">
-                <td>15-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="2">
-                <td>16-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="3">
-                <td>17-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="1">
-                <td>15-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="2">
-                <td>16-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="3">
-                <td>17-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="1">
-                <td>15-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="2">
-                <td>16-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              <tr key="3">
-                <td>17-06-2024</td>
-                <td>Mejorar infraestructura</td>
-                <td>
-                  Como recomendación se propone realizar mantenimiento en varias
-                  zonas del edificio, como en escaleras y espacios comunes.
-                </td>
-              </tr>
-              {data.map((item) => (
-                <tr key={item.id}>
-                  <td>{item.fecha}</td>
-                  <td>{item.asunto}</td>
-                  <td>{item.descripcion}</td>
+    <div id="recomendaciones-admin">
+      <div className="recomendations-content-container">
+        <h2>Recomendaciones</h2>
+        <div className="lista-recomendaciones-container">
+          <div className="table-responsive content-recomendations-max-height">
+            <table className="table table-hover">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Asunto</th>
+                  <th>Descripción</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                {data.map((item) => (
+                  <tr key={item.id}>
+                    <td>{item.fecha}</td>
+                    <td>{item.asunto}</td>
+                    <td>{item.descripcion}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
